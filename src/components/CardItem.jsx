@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function CardItem({item}) {
+  const navigate = useNavigate();
+  const moreClick = () => {
+    navigate('/details', {state: {item}});
+  }
+
   return (
-    <div className="cards" key={item.id}>
+    <div className="cards" key={item.id} onClick = {moreClick}>
       <div className="card-container">
         <div className="card">
           <img

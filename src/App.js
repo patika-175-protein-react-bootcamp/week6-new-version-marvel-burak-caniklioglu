@@ -6,6 +6,7 @@ import Marvel from './constants/Marvel';
 import Pagination from './constants/Pagination';
 import { CharacterProvider } from './contexts/context';
 import  useWindowSize  from './hooks/useWindowSize';
+import Router from './router/Router';
 
 
 function App() {
@@ -14,9 +15,7 @@ function App() {
     <div className="App">
       <CharacterProvider>
         <Marvel width = {width}/>
-        <Searchbar />        
-        <Cards />
-        <Pagination />
+        <Router />
       </CharacterProvider>
     </div>
   );
