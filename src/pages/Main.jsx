@@ -1,17 +1,17 @@
-import React from 'react'
-import Cards from '../components/Cards'
-import Searchbar from '../components/Searchbar'
-import Pagination from '../components/Pagination'
-import '../styles/Main.css'
+import React from "react";
+import Cards from "../components/Cards";
+import Pagination from "../components/Pagination";
+import "../styles/Main.css";
+import SearchbarArea from "../components/SearchbarArea";
 
 function Main() {
   return (
     <div>
-        <Searchbar />        
-        <Cards />
-        <Pagination />
+      <SearchbarArea />
+      <Cards />
+      <Pagination />
     </div>
-  )
+  );
 }
 
-export default Main
+export default Main;
