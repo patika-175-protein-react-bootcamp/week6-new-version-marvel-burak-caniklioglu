@@ -15,7 +15,7 @@ function CardItem({item}) {
             src={
               `${item.thumbnail.path}.${item.thumbnail.extension}` ===
               "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
-                ? "https://play-lh.googleusercontent.com/_6tffbWu8_-pzpMwDgsae41KF-GYec4Uzuvf7-6lS0j67rSqLKZkA8RIhM8v1I4n5w"
+                ? "https://play-lh.googleusercontent.com/yPjQKHUAIx7XQnvil2HpxCsjHhUADM4hc6TlcIWeEt8DU8vnM1gFC7jWh-OJ60cihw"
                 : `${item.thumbnail.path}.${item.thumbnail.extension}`
             }
             alt={item.name}
