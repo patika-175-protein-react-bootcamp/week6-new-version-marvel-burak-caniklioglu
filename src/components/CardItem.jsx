@@ -1,14 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-
+import { useCharacter } from "../contexts/context";
 function CardItem({item}) {
-  const navigate = useNavigate();
-  const moreClick = () => {
-    navigate('/details', {state: {item}});
-  }
+  const { moreClick } = useCharacter();
+  
 
   return (
-    <div className="cards" key={item.id} onClick = {moreClick}>
+    <div className="cards" key={item.id} onClick = {() => moreClick(item)}>
       <div className="card-container">
         <div className="card">
           <img

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CharacterContext = React.createContext();
 
@@ -10,6 +11,11 @@ const CharacterProvider = ({ children }) => {
 
   const [totalPage, setTotalPage] = useState([]);
   const hash = "0b3b8996d2019d3f5e64dfcc68f7e757";
+
+  const navigate = useNavigate();
+  const moreClick = (item) => {
+    navigate('/details', {state: {item}});
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -81,6 +87,7 @@ const CharacterProvider = ({ children }) => {
         offset,
         setOffset,
         loading,
+        moreClick,
       }}
     >
       {children}

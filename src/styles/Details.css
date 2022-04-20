@@ -24,6 +24,7 @@
 .hero-img-area{
     align-self: center;
     padding: 2rem;
+    
 }
 
 .hero-img-area img{
@@ -36,21 +37,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 600px;
 }
 .hero-name{
     font-size: 4rem;
+    text-align: center;
 }
 .hero-desc{
     font-size: 1.5rem;
     margin-top: 1rem;
     min-height: 3rem;
-    max-width: 600px;
 }
 .series-stories{
     margin-top: 2rem;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    min-width: 300px;
     min-height: 3rem;
 }
 
