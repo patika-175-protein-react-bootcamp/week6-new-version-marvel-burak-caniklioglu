@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import LangItem from './LangItem'
 
 function Langs() {
-  const [isLang,setIsLang] = useState('TR')
-  const lang = [ 'FR', 'EN', 'TR' ]
+  const [isLang,setIsLang] = useState('tr')
+  const lang = [ 'fr', 'en', 'tr' ]
   return (
     <div className='langs'>
       {
