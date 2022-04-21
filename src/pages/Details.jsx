@@ -6,7 +6,6 @@ function Details() {
   const navigate = useNavigate();
   const location = useLocation();
   const item = location.state.item;
-  console.log(item);
   return (
     <div className="detail">
       <div className="hero-container">

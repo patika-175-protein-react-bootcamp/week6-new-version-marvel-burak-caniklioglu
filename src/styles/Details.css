@@ -77,3 +77,16 @@
     cursor: pointer;
 }
 
+
+@media screen and (width < 769px) {
+    .super-hero{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 5rem 1rem;
+    }
+    .hero-img-area img{
+        border-radius: 100%;
+        max-width: 50vw;
+    }
+}

@@ -7,7 +7,7 @@ function Router() {
   return (
     <Routes>
       <Route exact path="/" element={<Main />} />
-      <Route path="/details" element={<Details />} />
+      <Route path="/details/:id" element={<Details />} />
     </Routes>
   )
 }

@@ -17,7 +17,7 @@ const CharacterProvider = ({ children }) => {
 
   const navigate = useNavigate();
   const moreClick = (item) => {
-    navigate('/details', {state: {item}});
+    navigate('/details/'+ item.id, {state: {item}});
   }
   const changeLang = (item) => {
     setIsLang(item)
