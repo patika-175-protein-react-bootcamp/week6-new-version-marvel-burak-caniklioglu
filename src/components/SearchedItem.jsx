@@ -1,13 +1,14 @@
 import React from 'react'
 import { useCharacter } from '../contexts/context'
+import { useTranslation } from "react-i18next";
 
 function SearchedItem({ item, character }) {
+  const { t } = useTranslation();
   const { moreClick } = useCharacter();
-    console.log(item);
   return (
     <div onClick={() => moreClick(item)}>
       {character 
-      ? <>Karakter Adı: {item.name}</>
+      ? <>{t('character.name')}: {item.name}</>
       : <>{item.name}</>
       }
     </div>

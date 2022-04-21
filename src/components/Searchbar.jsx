@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import useClickOutside from "../hooks/useClickOutside";
+import { useTranslation } from "react-i18next";
 import SearchedItem from "./SearchedItem";
 
 function Searchbar() {
@@ -8,8 +9,8 @@ function Searchbar() {
   const [search, setSearch] = useState("");
   const [character, setCharacter] = useState(true);
   const inputRef = useRef();
-  const [isOutsideClick, setIsOutsideClick] = useClickOutside(inputRef);
-  console.log(isOutsideClick);
+  const [isOutsideClick, setIsOutsideClick] = useClickOutside(inputRef,setSearch,setSearched);
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -27,22 +28,26 @@ function Searchbar() {
       `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${search}&apikey=75ff82aee4aef7e1bdb522eea36271d4`
     );
     if (res.data.data.results.length === 0) {
-      setSearched([{ name: "Karakter Bulunamadı" }]);
       setCharacter(false);
+      
+      setSearched([{ name: t("searchbar.noResult") }]);
       return;
     }
     if (res.statusText === "OK") {
       setSearched(res.data.data.results);
       setCharacter(true);
     }
+    
   };
 
   return (
     <div className="input-area" >
       <div className="input-container" ref={inputRef}>
         <input
+          id="input"
           type="text"
-          placeholder="Search"
+          autoComplete="off"
+          placeholder={t("searchbar.placeholder")}
           value={search}
           onChange={handleChange}
           onClick={() => setIsOutsideClick(false)}

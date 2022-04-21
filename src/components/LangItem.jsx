@@ -1,9 +1,13 @@
-import React from 'react'
 
-function LangItem({ item, isLang, setIsLang }) {
-    console.log(isLang);
+import React from 'react'
+import { useCharacter } from '../contexts/context'
+
+function LangItem({ item}) {
+  const { isLang,changeLang } = useCharacter();
+
+  
   return (
-    <button className={isLang === item ? "lang activated" : "lang"} value={item} onClick={() => setIsLang(item)}>
+    <button className={isLang === item ? "lang activated" : "lang"} value={item} onClick={(e) => changeLang(e.target.value)} >
         {item.toUpperCase()}
     </button>
   )

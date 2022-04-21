@@ -16,14 +16,21 @@
   .App svg{
     margin-top: -5%;
   }
-  .searchbar-area{
-  }
+  
   .searchbar-container{
     display: flex;
     justify-content: space-between;
     margin: 50px auto;
-    max-width: 65%
+    max-width: 65%;
   }
+  .searchbar-area label{
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+    margin-bottom: -50px;
+    font-size: 2rem;
+    color: white;
+}
   .input-area{
     width: 50%;
     min-height: 220px;
